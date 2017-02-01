@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team6022.robot.commands.ShooterStart;						
+//import org.usfirst.frc.team6022.robot.commands.StartTheSuck;
+//import org.usfirst.frc.team6022.robot.commands.StopTheSuck;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -17,11 +19,15 @@ public class OI {
 	    
 	 Button StartShooter = new JoystickButton(joystick, 1 );
 	 Button StopShooter = new JoystickButton(joystick, 2 );
-	    
+	 Button Benjamin = new JoystickButton(joystick,11);
+	 Button Upshirt = new JoystickButton (joystick,12);
+	 
 	 public OI() {
 	   StartShooter.whenPressed(new ShooterStart());
 	   StopShooter.whenPressed(new ShooterStop());
-	    
+	   //Benjamin.whenPressed(new StartTheSuck());
+	   //Upshirt.whenPressed(new StopTheSuck());
+	   
 	    }
 	    
 	    public Joystick getJoystick()

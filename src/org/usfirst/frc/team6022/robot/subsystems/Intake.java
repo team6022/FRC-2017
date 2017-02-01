@@ -1,4 +1,4 @@
-package org.usfirst.frc.team6022.robot.subsystems;
+/* package org.usfirst.frc.team6022.robot.subsystems;
 
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -17,7 +17,16 @@ public class Intake extends Subsystem {
 	
 	protected void initDefaultCommand() 
 	{
+		
 	}
-
-}
+	public void StartIntake(Joystick joystick)
+	{
+		ActiveIntake.set(1);
+	}
+	public void StopIntake(Joystick joystick)
+	{
+		ActiveIntake.set(0);
+	}
+	
+}*/
 

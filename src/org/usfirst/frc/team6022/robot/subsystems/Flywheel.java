@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Flywheel extends Subsystem {
 	
 	static VictorSP ActiveFly = new VictorSP(4);
+	//static VictorSP ActiveFly2 = new VictorSP(5);
 	
 	public Flywheel ()
 	{
