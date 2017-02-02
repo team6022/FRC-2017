@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Flywheel extends Subsystem {
 	
 	static VictorSP ActiveFly = new VictorSP(4);
-	//static VictorSP ActiveFly2 = new VictorSP(5);
 	
 	public Flywheel ()
 	{
@@ -20,7 +19,7 @@ public class Flywheel extends Subsystem {
 	}
 	public void ActiveFly(Joystick joystick) 
 	{
-		ActiveFly.set(1);
+		ActiveFly.set(-1);
 	}
 	public void KillFly(Joystick joystick) 
 	{

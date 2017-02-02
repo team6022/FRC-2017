@@ -1,4 +1,4 @@
-/* package org.usfirst.frc.team6022.robot.commands;
+ package org.usfirst.frc.team6022.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -30,4 +30,3 @@ public class StopTheSuck extends Command {
     protected void interrupted() {
     }
 }
-*/

@@ -11,7 +11,7 @@ import org.usfirst.frc.team6022.robot.autonomous.Auto;
 import org.usfirst.frc.team6022.robot.commands.DriveWithLogitech;
 import org.usfirst.frc.team6022.robot.subsystems.DriveShaft;
 import org.usfirst.frc.team6022.robot.subsystems.Flywheel;
-//import org.usfirst.frc.team6022.robot.subsystems.Intake;
+import org.usfirst.frc.team6022.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -28,7 +28,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static DriveShaft DriveShaft;
 	public static Flywheel Flywheel;
-	//public static Intake Intake;
+	public static Intake Intake;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -40,10 +40,10 @@ public class Robot extends IterativeRobot {
     public void robotInit()
     {
     	//Initialize subsystems
+    	Intake = new Intake();
 		Flywheel = new Flywheel();
     	DriveShaft = new DriveShaft();
 		oi = new OI();
-		//Intake = new Intake();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new DriveWithLogitech());
         chooser.addObject("My Auto", new Auto());

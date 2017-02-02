@@ -6,8 +6,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team6022.robot.commands.ShooterStart;						
-//import org.usfirst.frc.team6022.robot.commands.StartTheSuck;
-//import org.usfirst.frc.team6022.robot.commands.StopTheSuck;
+import org.usfirst.frc.team6022.robot.commands.StartTheSuck;
+import org.usfirst.frc.team6022.robot.commands.StopTheSuck;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -25,8 +25,8 @@ public class OI {
 	 public OI() {
 	   StartShooter.whenPressed(new ShooterStart());
 	   StopShooter.whenPressed(new ShooterStop());
-	   //Benjamin.whenPressed(new StartTheSuck());
-	   //Upshirt.whenPressed(new StopTheSuck());
+	   Benjamin.whenPressed(new StartTheSuck());
+	   Upshirt.whenPressed(new StopTheSuck());
 	   
 	    }
 	    
