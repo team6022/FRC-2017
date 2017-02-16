@@ -10,18 +10,23 @@ public class GoNoWhere extends Command {
 	public GoNoWhere(double inputTime)
     {
         requires(Robot.DriveShaft);
+        requires(Robot.Flywheel);
         Time = inputTime;
+
     }
 
     protected void initialize()
     {
     	Robot.DriveShaft.GoNoWhere();
     	setTimeout(Time);
+    	Robot.Flywheel.GoNoWhere();
+    	setTimeout(Time);
     }
 
     protected void execute()
     {
     	Robot.DriveShaft.GoNoWhere();
+    	Robot.Flywheel.GoNoWhere();
     }
 
     protected boolean isFinished()
@@ -32,6 +37,7 @@ public class GoNoWhere extends Command {
     protected void end()
     {
     	Robot.DriveShaft.GoNoWhere();
+    	Robot.Flywheel.GoNoWhere();
     }
 	
 	protected void interrupted()

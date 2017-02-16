@@ -19,12 +19,21 @@ public class Flywheel extends Subsystem {
 	}
 	public void ActiveFly(Joystick joystick) 
 	{
-		ActiveFly.set(-1);
+		ActiveFly.set(-0.45);
 	}
 	public void KillFly(Joystick joystick) 
 	{
 		ActiveFly.set(0);
 	}
-
+	public void AutoShoot(double speed)
+	{
+		ActiveFly.set(-0.45);
+		
+	}
+	public void GoNoWhere (){
+		
+		ActiveFly.set(0);
+	}
+	
 }
 

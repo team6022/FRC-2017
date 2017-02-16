@@ -16,21 +16,21 @@ public class Gyro extends SampleRobot
 		public Gyro() {
 			gyro = new ADXRS450_Gyro();
 			
-			Robot = new RobotDrive(0,1,2,3);
-			Robot.setExpiration(0.1);
+Robot = new RobotDrive(0,1,2,3);
+Robot.setExpiration(0.1);
 		}
 		public void AutonomousCommand() {
 			
-			gyro.reset();
-			while (isAutonomous())
-			{
-				double angle = gyro.getAngle();
+gyro.reset();
+while (isAutonomous())
+	{
+	double angle = gyro.getAngle();
 				
-				Robot.drive(-1.0, -angle*Kp);
+	Robot.drive(-1.0, -angle*Kp);
 				
-				Timer.delay(0.004);
+	Timer.delay(0.004);
 					}
-				Robot.drive(0.0, 0);
+	Robot.drive(0.0, 0);
 			
 			}
 			
