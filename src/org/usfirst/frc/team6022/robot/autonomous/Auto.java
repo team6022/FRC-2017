@@ -11,6 +11,5 @@ public class Auto extends CommandGroup {
 		//addSequential (new GoForward(-1, 1));
 		//addSequential (new AutoShoot(-0.45, 1));
 		//addSequential (new GoNoWhere(2));
-		addSequential (new GoLeft(0.50,1));
 	}
 }

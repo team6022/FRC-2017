@@ -4,6 +4,8 @@ package org.usfirst.frc.team6022.robot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.CameraServer;
+//import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -12,10 +14,12 @@ import org.usfirst.frc.team6022.robot.commands.DriveWithLogitech;
 import org.usfirst.frc.team6022.robot.subsystems.DriveShaft;
 import org.usfirst.frc.team6022.robot.subsystems.Flywheel;
 import org.usfirst.frc.team6022.robot.subsystems.Intake;
-import org.usfirst.frc.team6022.robot.subsystems.AutoLeftShaft;
+import org.usfirst.frc.team6022.robot.subsystems.Servo;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import edu.wpi.first.wpilibj.CameraServer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,10 +31,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	
 	public static OI oi;
-	public static AutoLeftShaft AutoLeftShaft;
 	public static DriveShaft DriveShaft;
 	public static Flywheel Flywheel;
 	public static Intake Intake;
+	public static Servo Servo;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -41,17 +45,19 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit()
     {
+    	
+    	//Starts Camera Server
+        CameraServer.getInstance().startAutomaticCapture();
+        
     	//Initialize subsystems
+    	Servo = new Servo();
     	Intake = new Intake();
 		Flywheel = new Flywheel();
     	DriveShaft = new DriveShaft();
 		oi = new OI();
-		AutoLeftShaft = new AutoLeftShaft();
-        chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new DriveWithLogitech());
-        chooser.addObject("My Auto", new Auto());
-        SmartDashboard.putData("Auto mode", chooser);
-        
+		
+
+ 
     }
 	
 	/**
@@ -117,4 +123,12 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+//    public void operatorControl() {
+//
+//        while (isOperatorControl() && isEnabled()) {
+//  
+//            Timer.delay(0.005);		// wait for a motor update time
+//        }
+//    }
 }

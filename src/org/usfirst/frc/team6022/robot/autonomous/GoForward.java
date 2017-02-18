@@ -7,12 +7,10 @@ public class GoForward extends Command {
 
 	private double Speed;
 	private double Time;
-	//private double Rotate; // Maybe pass in rotation
 
 	public GoForward(double inputSpeed, double inputTime) {
 		requires(Robot.DriveShaft);
 		Speed = inputSpeed;
-		//Rotate = inputRotate;
 		Time = inputTime;
 	}
 
