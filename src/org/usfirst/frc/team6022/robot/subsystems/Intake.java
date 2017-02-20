@@ -22,7 +22,7 @@ public class Intake extends Subsystem {
 	public void StartIntake(Joystick joystick)
 	{
 		ActiveIntake.set(1);
-		BeltSystem1.set(0.5);
+		BeltSystem1.set(0.65);
 	}
 	public void StopIntake(Joystick joystick)
 	{

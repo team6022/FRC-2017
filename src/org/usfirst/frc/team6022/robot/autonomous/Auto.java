@@ -6,10 +6,10 @@ public class Auto extends CommandGroup {
 
 	public Auto()
 	{
-		addSequential (new GoForward(0.50, 1));
+		addSequential (new GoForward(0.50,2));
 		addSequential (new GoNoWhere(2));
-		//addSequential (new GoForward(-1, 1));
-		//addSequential (new AutoShoot(-0.45, 1));
-		//addSequential (new GoNoWhere(2));
+//		addSequential (new GoForward(-0.50,3));
+//		addSequential (new GoForward(0.50,3));
+//		addSequential (new GoForward(-0.25,3));
 	}
 }

@@ -1,26 +1,26 @@
-package org.usfirst.frc.team6022.robot.autonomous;
+package org.usfirst.frc.team6022.robot.commands;
 
 import org.usfirst.frc.team6022.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class GoForward extends Command {
+public class AlternationDown extends Command {
 
 	private double Speed;
 	private double Time;
 
-	public GoForward(double inputSpeed, double inputTime) {
-		requires(Robot.DriveShaft);
+	public AlternationDown(double inputSpeed, double inputTime) {
+		requires(Robot.Flipper);
 		Speed = inputSpeed;	
 		Time = inputTime;
 	}
 
 	protected void initialize() {
-		Robot.DriveShaft.GoForward(Speed);
+		Robot.Flipper.ServoDown(Speed);
 		setTimeout(Time);
 	}
 
 	protected void execute() {
-		Robot.DriveShaft.GoForward(Speed);
+		Robot.Flipper.ServoDown(Speed);
 	}
 
 	protected boolean isFinished() {
@@ -28,7 +28,6 @@ public class GoForward extends Command {
 	}
 
 	protected void end() {
-		Robot.DriveShaft.GoNoWhere();
 	}
 
 	protected void interrupted() {

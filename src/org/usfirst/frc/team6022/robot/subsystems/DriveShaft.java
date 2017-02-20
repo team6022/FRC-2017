@@ -20,7 +20,7 @@ public class DriveShaft extends Subsystem {
 		setDefaultCommand (new DriveWithLogitech());}
 	
 		public void DriveWithLogitech(Joystick joystick) {
-			drive.arcadeDrive(joystick.getY()*0.75,(-joystick.getTwist()*.75));
+			drive.arcadeDrive(joystick.getY()*0.85,(-joystick.getTwist()*.50));
 			
 		}
 		public void GoForward(double inputSpeed)

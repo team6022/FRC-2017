@@ -6,7 +6,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team6022.robot.commands.OpenGateway;
+//import org.usfirst.frc.team6022.robot.commands.CloseGateway;
+//import org.usfirst.frc.team6022.robot.commands.OpenGateway;
+import org.usfirst.frc.team6022.robot.commands.PleaseWork;
 import org.usfirst.frc.team6022.robot.commands.ShooterStart;
 import org.usfirst.frc.team6022.robot.commands.ShooterStop;
 import org.usfirst.frc.team6022.robot.commands.StartTheSuck;
@@ -24,14 +26,16 @@ public class OI {
 	 Button StopShooter = new JoystickButton(joystick, 2 );
 	 Button Benjamin = new JoystickButton(joystick,11);
 	 Button Upshirt = new JoystickButton (joystick,12);
-	 Button Open = new JoystickButton (joystick, 3);
+	 Button Close = new JoystickButton (joystick, 3);
+	 Button Open = new JoystickButton (joystick, 5);
 	 
 	 public OI() {
 	   StartShooter.whenPressed(new ShooterStart());
 	   StopShooter.whenPressed(new ShooterStop());
 	   Benjamin.whenPressed(new StartTheSuck());
 	   Upshirt.whenPressed(new StopTheSuck());
-	   Open.whenPressed(new OpenGateway());
+	   Close.whenPressed(new PleaseWork());
+	   //Open.whenPressed(new OpenGateway());
 	   
 	    }
 	    
