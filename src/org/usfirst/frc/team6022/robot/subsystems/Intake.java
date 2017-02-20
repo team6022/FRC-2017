@@ -1,4 +1,4 @@
- package org.usfirst.frc.team6022.robot.subsystems;
+package org.usfirst.frc.team6022.robot.subsystems;
 
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -7,28 +7,26 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 
 public class Intake extends Subsystem {
-	
+
 	static VictorSP ActiveIntake = new VictorSP(5);
 	static VictorSP BeltSystem1 = new VictorSP(6);
-	
-	public Intake ()
-	{
+
+	public Intake () {
 		super();
 	}
-	
-	protected void initDefaultCommand() 
-	{	
+
+	protected void initDefaultCommand(){
+
 	}
-	public void StartIntake(Joystick joystick)
-	{
+
+	public void StartIntake(Joystick joystick) {
 		ActiveIntake.set(1);
 		BeltSystem1.set(0.65);
 	}
-	public void StopIntake(Joystick joystick)
-	{
+
+	public void StopIntake(Joystick joystick) {
 		ActiveIntake.set(0);
 		BeltSystem1.set(0);
 	}
-	
-}
 
+}

@@ -1,34 +1,30 @@
 package org.usfirst.frc.team6022.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-
 import org.usfirst.frc.team6022.robot.Robot;
 
 
-
- 
 public class StartTheSuck extends Command {
 
-    public StartTheSuck () {
-        requires(Robot.Intake);
-    }
-    
-    protected void initialize() {
-    }
+	public StartTheSuck () {
+		requires(Robot.Intake);
+	}
 
- protected void execute() {
-    	 (Robot.Intake).StartIntake (Robot.oi.getJoystick());
-    }
+	protected void initialize() {
+	}
 
-  protected boolean isFinished() {
-       return false;
-}
- 
-    protected void end() {
-}
+	protected void execute() {
+		(Robot.Intake).StartIntake (Robot.oi.getJoystick());
+	}
 
-   
-protected void interrupted() {
-}
-}
+	protected boolean isFinished() {
+		return false;
+	}
 
+	protected void end() {
+	}
+
+	protected void interrupted() {
+	}
+
+}
