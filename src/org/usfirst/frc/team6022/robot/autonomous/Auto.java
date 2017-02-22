@@ -5,11 +5,10 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Auto extends CommandGroup {
 
 	public Auto() {
-		addSequential (new GoForward(0.50,2));
-		addSequential (new GoNoWhere(2));
-//		addSequential (new GoForward(-0.50,3));
-//		addSequential (new GoForward(0.50,3));
-//		addSequential (new GoForward(-0.25,3));
-	}
+		addSequential (new GoForward(0.50,4));
+		//addSequential (new GoForward(-0.50,2));
+		//addSequential (new AutoShoot(0.43,7));
+		//addParallel (new AutoServo());
 
+	}
 }

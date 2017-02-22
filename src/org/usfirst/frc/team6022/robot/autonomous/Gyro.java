@@ -18,14 +18,19 @@ public class Gyro extends SampleRobot {
 		Robot = new RobotDrive(0,1,2,3);
 		Robot.setExpiration(0.1);
 	}
+	
 	public void AutonomousCommand() {
 
 		gyro.reset();
 
 		while (isAutonomous()) {
 			double angle = gyro.getAngle();
+			//=============================
+			// Try to change this number to fix the drift on auto
+			//=============================
+			double offset = 0.2;
 
-			Robot.drive(-1.0, -angle*Kp);
+			Robot.drive(-1.0, -angle*Kp*offset);
 
 			Timer.delay(0.004);
 		}

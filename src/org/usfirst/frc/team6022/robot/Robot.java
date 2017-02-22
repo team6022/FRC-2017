@@ -5,9 +5,9 @@ import edu.wpi.first.wpilibj.*;//"IterativeRobot";
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.CameraServer;
-//import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.Timer;
 
 import org.usfirst.frc.team6022.robot.autonomous.Auto;
 import org.usfirst.frc.team6022.robot.commands.DriveWithLogitech;
@@ -30,12 +30,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-
 public static OI oi;
 public static DriveShaft DriveShaft;
 public static Flywheel Flywheel;
 public static Intake Intake;
 public static Flipper Flipper;
+
+
 
 Command autonomousCommand;
 SendableChooser chooser;
@@ -47,9 +48,20 @@ SendableChooser chooser;
 public void robotInit()
 {
 
+	
+	
 	//Starts Camera Server
-	CameraServer.getInstance().startAutomaticCapture();
+	CameraServer camServer0 = CameraServer.getInstance();
+	camServer0.setQuality(50);
+	camServer0.startAutomaticCapture("cam0");
+	
 
+	
+	
+	
+	
+	
+	
 	//Initialize subsystems
 	Flipper = new Flipper();
 	Intake = new Intake();
@@ -129,11 +141,11 @@ public void testPeriodic() {
 	LiveWindow.run();
 }
 
-//    public void operatorControl() {
-//
-//        while (isOperatorControl() && isEnabled()) {
-//
-//            Timer.delay(0.005);		// wait for a motor update time
-//        }
-//    }
+public void operatorControl() {
+
+      while (isOperatorControl() && isEnabled()) {
+
+           Timer.delay(0.005);		// wait for a motor update time
+        }
+    }
 }
