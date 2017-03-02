@@ -4,10 +4,8 @@ package org.usfirst.frc.team6022.robot;
 import edu.wpi.first.wpilibj.*;//"IterativeRobot";
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.Timer;
 
 import org.usfirst.frc.team6022.robot.autonomous.Auto;
 import org.usfirst.frc.team6022.robot.commands.DriveWithLogitech;
@@ -36,6 +34,23 @@ public static Flywheel Flywheel;
 public static Intake Intake;
 public static Flipper Flipper;
 
+//final int gyroChannel = 0;
+//final int joystickChannel = 0;
+//
+//final int leftMotorChannel = 0;
+//final int leftRearMotorChannel = 1;
+//final int rightMotorChannel = 2;
+//final int rightRearMotorChannel = 3;
+//
+//double angleSetpoint = 0.0;
+//final double pGain = .006;
+//
+//final double voltsPerDegreePerSecond = .0128;
+//
+//RobotDrive myRobot;
+//AnalogGyro gyro;
+//Joystick joystick;
+
 
 
 Command autonomousCommand;
@@ -54,20 +69,23 @@ public void robotInit()
 	CameraServer camServer0 = CameraServer.getInstance();
 	camServer0.setQuality(50);
 	camServer0.startAutomaticCapture("cam0");
-	
+//	CameraServer camServer1 = CameraServer.getInstance();
+//	camServer1.setQuality(50);
+//	camServer1.startAutomaticCapture("cam1");
+//	
+//	 myRobot = new RobotDrive(new VictorSP(leftMotorChannel), new VictorSP(
+//	          leftRearMotorChannel), new VictorSP(rightMotorChannel),
+//	          new VictorSP(rightRearMotorChannel));
+//	        gyro = new AnalogGyro(gyroChannel);
+//	        joystick = new Joystick(joystickChannel);
 
-	
-	
-	
-	
-	
-	
 	//Initialize subsystems
 	Flipper = new Flipper();
 	Intake = new Intake();
 	Flywheel = new Flywheel();
 	DriveShaft = new DriveShaft();
 	oi = new OI();
+	
 	chooser = new SendableChooser();
 	chooser.addDefault("Default Auto", new DriveWithLogitech());
 	chooser.addObject("My Auto", new Auto());
@@ -146,6 +164,23 @@ public void operatorControl() {
       while (isOperatorControl() && isEnabled()) {
 
            Timer.delay(0.005);		// wait for a motor update time
-        }
+        }     
+//      double turningValue;
+//      gyro.setSensitivity(voltsPerDegreePerSecond); //calibrates gyro values to equal degrees
+//      while (isOperatorControl() && isEnabled()) {
+//
+//          turningValue =  (angleSetpoint - gyro.getAngle())*pGain;
+//          if(joystick.getY() <= 0)
+//          {
+//              //forwards
+//              myRobot.drive(joystick.getY(), turningValue);
+//          } else {
+//              //backwards
+//              myRobot.drive(joystick.getY(), -turningValue);
+//          }
+//      }
+//      
+      
+      
     }
 }
