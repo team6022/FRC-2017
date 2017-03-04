@@ -16,8 +16,8 @@ import org.usfirst.frc.team6022.robot.subsystems.Flipper;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-//import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.IterativeRobot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -33,6 +33,8 @@ public static DriveShaft DriveShaft;
 public static Flywheel Flywheel;
 public static Intake Intake;
 public static Flipper Flipper;
+
+
 
 //final int gyroChannel = 0;
 //final int joystickChannel = 0;
@@ -60,15 +62,19 @@ SendableChooser chooser;
  * This function is run when the robot is first started up and should be
  * used for any initialization code.
  */
+
+
+
 public void robotInit()
 {
-
 	
-	
+	CameraServer.getInstance().startAutomaticCapture();
+	CameraServer.getInstance().startAutomaticCapture();
+		
 	//Starts Camera Server
-	CameraServer camServer0 = CameraServer.getInstance();
-	camServer0.setQuality(50);
-	camServer0.startAutomaticCapture("cam0");
+	//CameraServer camServer0 = CameraServer.getInstance();
+	//camServer0.setQuality(50);
+	//camServer0.startAutomaticCapture("cam0");
 //	CameraServer camServer1 = CameraServer.getInstance();
 //	camServer1.setQuality(50);
 //	camServer1.startAutomaticCapture("cam1");
